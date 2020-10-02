@@ -1,19 +1,24 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    buildFeatures {
+        dataBinding = true
+    }
+
     defaultConfig {
         applicationId "com.yulie.graph"
-        minSdkVersion 19
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {
@@ -22,15 +27,46 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "androidx.core:core-ktx:$rootProject.androidX"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "com.google.android.material:material:$rootProject.material"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navVersion"
+    implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$rootProject.retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerview"
+    implementation "com.android.support:support-annotations:$rootProject.support"
+
+
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle_version"
+
+    implementation "com.google.dagger:dagger:$rootProject.dagger"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger"
+    compileOnly "javax.annotation:jsr250-api:$rootProject.javax_annotation"
+
+    testImplementation "junit:junit:$rootProject.junit"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.testext"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.testespresso"
+
+
+
 
 }
