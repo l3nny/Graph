@@ -10,5 +10,4 @@ open class BaseViewModel : ViewModel() {
 
     val dataLoading = MutableLiveData<Boolean>().apply { value = false }
 
-    val toastMessage = MutableLiveData<String>()
 }

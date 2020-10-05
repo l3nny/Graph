@@ -34,7 +34,6 @@ class GraphFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewDataBinding.viewmodel?.fetchList()
 
-        //  setupAdapter()
         setupObservers()
 
     }
@@ -47,9 +46,6 @@ class GraphFragment : Fragment() {
 
         })
 
-        /* viewDataBinding.viewmodel?.toastMessage?.observe(viewLifecycleOwner, Observer {
-             activity?.Toast(it)
-         })*/
     }
 
 
@@ -75,21 +71,4 @@ class GraphFragment : Fragment() {
         return (speed.toDouble() % 16.6666667).toInt()
 
     }
-
-
-    /*private fun setupAdapter() {
-         val viewModel = viewDataBinding.viewmodel
-         if (viewModel != null) {
-             adapter = ApiListAdapter()
-             val layoutManager = LinearLayoutManager(activity)
-             repo_list_rv.layoutManager = layoutManager
-             repo_list_rv.addItemDecoration(
-                 DividerItemDecoration(
-                     activity,
-                     layoutManager.orientation
-                 )
-             )
-             repo_list_rv.adapter = adapter
-         }
-     }*/
 }

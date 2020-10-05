@@ -47,12 +47,10 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navVersion"
-    implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$rootProject.retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
-    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerview"
     implementation "com.android.support:support-annotations:$rootProject.support"
 
 
@@ -60,8 +58,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle_version"
 
-    implementation "com.google.dagger:dagger:$rootProject.dagger"
-    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger"
     compileOnly "javax.annotation:jsr250-api:$rootProject.javax_annotation"
 
     testImplementation "junit:junit:$rootProject.junit"
