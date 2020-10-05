@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="java.util.List" />
+
+        <variable
+            name="itemData"
+            type="com.yulie.graph.service.model.Data" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        android:padding="@dimen/_10dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/timepos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/time"
+            android:textColor="@color/design_default_color_on_secondary" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timepos"
+            android:textColor="@color/design_default_color_on_secondary" />
+
+        <TextView
+            android:id="@+id/speedpos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time"
+            android:text="@string/speed"
+            android:textColor="@color/design_default_color_on_secondary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/speedpos"
+            android:textColor="@color/design_default_color_on_secondary" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Graph</string>
+
+    <string name="time">Time</string>
+
+    <string name="speed">Speed</string>
+
+    <string name="no_content">No content to show</string>
 </resources>
